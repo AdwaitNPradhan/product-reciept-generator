@@ -1,7 +1,10 @@
 import PySimpleGUI as sg
+from elevate import elevate
 import write
 import sys
 import os
+
+elevate()
 
 path = os.getcwd()
 chosenPath = path
