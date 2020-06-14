@@ -103,7 +103,6 @@ while True:
         testWin['Write to File'].update(disabled = True)
         testWin['Close'].update(disabled = True)
         status = write.WritetoCSV(path = chosenPath)
-        # sg.ProgressBar(100,orientation='v',text = 'Writing to CSV...')
         sg.popup_annoying(f"Writing process sucessful.\nFile saved as 'Amazon Estimation list.csv' at {chosenPath}.\nOpen the file using Excel or any other application.",keep_on_top=True)
         testWin['Update'].update(disabled = False)
         testWin['Generate Total'].update(disabled = False)
