@@ -24,7 +24,6 @@ def ParseData(data:dict):
     global total
     global link
     rows += 1
-    print("-------------------------------------\nName: " , type(data['name']) ,"Price: ",data['price'],"quantity: ", data['quantity'],"link:",data['link'], "Total: ",total, "\n-------------------------------------")
     name.append(data['name'])
     price.append(data['price'])
     link.append(data['link'])
