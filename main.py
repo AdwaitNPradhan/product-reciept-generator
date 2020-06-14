@@ -2,6 +2,7 @@ import PySimpleGUI as sg
 import write
 import sys
 import os
+
 path = os.getcwd()
 chosenPath = path
 sg.theme('DarkBrown4')
@@ -40,13 +41,17 @@ testWin = sg.Window('Amazon Estimation List',layout,keep_on_top=True)
 sg.PopupAnnoying("Please be careful while entering the data, Duplicates are not checked and are directly written to the file.\nEverytime you click on the Write to file, New data pack is created and is written iinto the file,\nso ensure that before writting into the file you have entered all the dataor you can have multiple datapacks.",keep_on_top=True,grab_anywhere=False)
 
 while True:
+            
     event, values = testWin.read()   
+
     if event in (None, 'cancel','Close'):
         testWin.Close()
         sg.PopupAnnoying("Thank You for using my Application.",keep_on_top=True,auto_close=True,auto_close_duration=4)
         break
+
     elif event in ('Update'):
-        if values['price'] != '' and values['name'] != '' and values['quantity'] != '' and values['link'] != '':
+            if values['price'] != '' and values['name'] != '' and values['quantity'] != '' and values['link'] != '':
+            
             try:
                 index+=1
                 dat1 =  [index,values['name'],values['price'],values['quantity'],str( int(values['quantity']) * int(values['price'])),values['link']]
@@ -59,9 +64,11 @@ while True:
             except ValueError:
                 sg.PopupNoTitlebar('Problems with values of Price or Quantity',keep_on_top=True)
         else:
+            
             sg.PopupNoTitlebar('Empty Feilds detected',button_type=None,keep_on_top=True)
             print('empty')
             pass
+
     elif event in ('Generate Total'):
         total = write.Total()
         testWin['Update'].update(disabled = True)
@@ -88,6 +95,7 @@ while True:
         testWin['Write to File'].update(disabled = False)
         testWin['Close'].update(disabled = False)
         print(chosenPath)
+            
     elif event in 'Write to File':
         testWin['Update'].update(disabled = True)
         testWin['Generate Total'].update(disabled = True)
