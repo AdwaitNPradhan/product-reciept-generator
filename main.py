@@ -58,15 +58,12 @@ while True:
                 data.append(dat1)
                 testWin['-table-'].update(values = data)
                 write.ParseData(values)
-                print(values)
-                print(tempStore)
                 testWin['Write to File'].update(disabled = False)
             except ValueError:
                 sg.PopupNoTitlebar('Problems with values of Price or Quantity',keep_on_top=True)
         else:
             
             sg.PopupNoTitlebar('Empty Feilds detected',button_type=None,keep_on_top=True)
-            print('empty')
             pass
 
     elif event in ('Generate Total'):
@@ -82,6 +79,7 @@ while True:
         testWin['Choose Location'].update(disabled = False)
         testWin['Write to File'].update(disabled = False)
         testWin['Close'].update(disabled = False)
+            
     elif event in 'Choose Location':
         testWin['Update'].update(disabled = True)
         testWin['Generate Total'].update(disabled = True)
@@ -94,7 +92,6 @@ while True:
         testWin['Choose Location'].update(disabled = False)
         testWin['Write to File'].update(disabled = False)
         testWin['Close'].update(disabled = False)
-        print(chosenPath)
             
     elif event in 'Write to File':
         testWin['Update'].update(disabled = True)
