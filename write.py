@@ -1,12 +1,6 @@
-import pandas as pd
-import random as r
-import openpyxl as opx
 import os
 import csv
 from datetime import datetime
-
-
-
 
 grandTotal = 0
 tempTotal = 0
@@ -40,6 +34,7 @@ def ParseData(data:dict):
     grandTotal += tempTotal
     pass
 
+
 def WritetoCSV(path:str):
     date = datetime.now().strftime("%d/%m/%y")
     time = datetime.now().strftime("%H:%M")
@@ -59,7 +54,6 @@ def WritetoCSV(path:str):
     
     f.close() 
     pass
-
 
 
 def Total():
