@@ -45,7 +45,7 @@ def WritetoCSV(path:str):
         writer.writerow(heading)
         writer.writerow(rowinit)
         for row in range(rows):
-            writeData = [str(row), name[row], str(price[row]), str(quantity[row]), str(total[row]), link[row]]
+            writeData = [str(row + 1), name[row], str(price[row]), str(quantity[row]), str(total[row]), link[row]]
             writer.writerow(writeData)
         grandData = ['Grand Total:', str(grandTotal)]
         writer.writerow(grandData)
