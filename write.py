@@ -40,7 +40,6 @@ def WritetoCSV(path:str):
     time = datetime.now().strftime("%H:%M")
     heading = ['Date:',str(date),'Time:',str(time),]
     rowinit = ['Index','Name','Price','Quantity','Total','Link',]
-    #  date:session number:name:price:quantity:total:link:grandtotal
 
     with open(path + '/Amazon Estimation list.csv','a',newline='') as f:
         writer = csv.writer(f,delimiter = ',')
